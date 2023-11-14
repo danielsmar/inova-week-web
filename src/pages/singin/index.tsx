@@ -1,9 +1,9 @@
-import Login from '../../components/Login'
+import Login from '../../components/Login';
 
-export default function Singin(){
+export default function Singin() {
   return (
     <>
-    <Login />
+      <Login />
     </>
-  )
+  );
 }

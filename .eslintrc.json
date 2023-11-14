@@ -1,0 +1,53 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "react/no-unused-prop-types": "off",
+    "no-use-before-define": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "consistent-return": "off",
+    "radix": "off",
+    "react/jsx-no-bind": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "no-multi-assign": "off",
+    "no-underscore-dangle": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "no-param-reassign": "off",
+    "global-require": "off",
+    "camelcase": "off",
+    "func-names": "off",
+    "@typescript-eslint/no-use-before-define": "off"
+  }
+}

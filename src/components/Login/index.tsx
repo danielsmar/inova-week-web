@@ -18,12 +18,9 @@ import { VscEye, VscEyeClosed } from 'react-icons/vsc';
 
 import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
+import { Logo } from '../Logo';
 
-export default function ForgotPassword() {
-  const router = useRouter();
-  const params = router.query;
-
+export default function Login() {
   const [showRepeatedPassword, setShowRepeatedPassword] = React.useState(false);
 
   const { register, handleSubmit } = useForm();
@@ -40,14 +37,13 @@ export default function ForgotPassword() {
     }
 
     setIsLoading(true);
-
     // Submit the form data to the API
   });
 
   return (
     <Box
       w="100%"
-      h="100vh"
+      minHeight="100vh"
       bg="brand.800"
       display="flex"
       alignItems="center"
@@ -59,16 +55,23 @@ export default function ForgotPassword() {
         px={['5%', '5%', '5%', '5%', 24]}
         py={['20%', '20%', 150]}
       >
-        <Heading textAlign="center" size="md" color="white" fontSize="32px">
+        <Logo />
+        <Heading
+          textAlign="center"
+          size="md"
+          color="white"
+          fontSize="32px"
+          fontWeight="semibold"
+          mt={38}
+        >
           Login
         </Heading>
 
-        <Text mt="18" mb="2px" fontWeight="Bold" color="white">
-          Usuário
-        </Text>
-
         <form onSubmit={onSubmit}>
-          <Stack gap={1} >
+          <Stack gap={1}>
+            <Text mt="18" fontWeight="Bold" color="white">
+              Usuário
+            </Text>
             <Input
               {...register('password')}
               size="lg"
@@ -81,11 +84,16 @@ export default function ForgotPassword() {
               focusBorderColor="brandPink.600"
             />
 
-            <Flex direction="row" justifyContent="space-between">
-              <Text mt="18" fontWeight="bold" color="white">
+            <Flex
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              mt="18"
+            >
+              <Text fontWeight="bold" color="white">
                 Senha
               </Text>
-              <Link color="white" fontWeight="bold" pt={4}>
+              <Link href="/" color="white" fontWeight="bold">
                 Esqueceu sua senha?
               </Link>
             </Flex>
@@ -122,21 +130,27 @@ export default function ForgotPassword() {
                   }
                 />
               </InputRightElement>
-          </InputGroup>
+            </InputGroup>
 
             <Button
               size="lg"
               isLoading={isLoading}
               type="submit"
               color="White"
-              bg="brandPink.600"
+              bg="brandPink.500"
               mt={26}
-              _hover={{ bg: 'brandPink.500' }}
+              _hover={{ bg: 'brandPink.400' }}
             >
               Login
             </Button>
-            <Link color="white" fontWeight="bold" pt={4} pl={40}>
-                Criar conta
+            <Link
+              href="/"
+              color="white"
+              fontWeight="bold"
+              textAlign="center"
+              mt={2}
+            >
+              Criar conta
             </Link>
           </Stack>
         </form>
