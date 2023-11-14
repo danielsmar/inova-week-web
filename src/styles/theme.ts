@@ -26,12 +26,10 @@ export const theme = extendTheme({
       800: '#45062b',
       900: '#1c0011',
     },
-    
   },
   fonts: {
     heading: `Inter, ${base.fonts?.heading}`,
     body: `Inter, ${base.fonts?.body}`,
     mono: `Inter, ${base.fonts?.mono}`,
   },
-  
 });
